@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#060608"/>
+
+  <!-- Orange accent corner lines -->
+  <path d="M4 18 L4 4 L18 4" stroke="#f97316" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M46 4 L60 4 L60 18" stroke="#f97316" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M4 46 L4 60 L18 60" stroke="#f97316" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M46 60 L60 60 L60 46" stroke="#f97316" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- M letter -->
+  <text
+    x="5"
+    y="46"
+    font-family="Georgia, serif"
+    font-size="36"
+    font-weight="bold"
+    fill="#f97316"
+    letter-spacing="-1"
+  >M</text>
+
+  <!-- L letter -->
+  <text
+    x="36"
+    y="46"
+    font-family="Georgia, serif"
+    font-size="36"
+    font-weight="bold"
+    fill="#f1f0ee"
+    letter-spacing="-1"
+  >L</text>
+
+  <!-- Bottom orange underline accent -->
+  <rect x="8" y="52" width="20" height="2" rx="1" fill="#f97316" opacity="0.6"/>
+</svg>

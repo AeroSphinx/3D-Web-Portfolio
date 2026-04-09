@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables ─────────────────────────────────── */
+:root {
+  --orange: #f97316;
+  --orange-glow: #ff6b00;
+  --orange-dim: rgba(249, 115, 22, 0.15);
+  --dark-bg: #060608;
+  --dark-card: #0f0f16;
+  --dark-border: rgba(249, 115, 22, 0.12);
+  --text-primary: #f1f0ee;
+  --text-muted: #6b6b80;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+/* ─── Selection ──────────────────────────────────────── */
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+  color: #fff;
+}
+
+/* ─── Typography ─────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+/* ─── Utility Classes ────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+.text-orange   { color: var(--orange); }
+.bg-orange     { background-color: var(--orange); }
+
+.orange-glow {
+  text-shadow: 0 0 30px rgba(249, 115, 22, 0.6),
+               0 0 60px rgba(249, 115, 22, 0.3);
+}
+
+.card-glass {
+  background: rgba(15, 15, 22, 0.7);
+  border: 1px solid var(--dark-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-orange {
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-orange:hover::before { opacity: 1; }
+.btn-orange:hover {
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.5),
+              0 0 60px rgba(249, 115, 22, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-outline-orange {
+  background: transparent;
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--orange);
+  cursor: none;
+  transition: all 0.3s ease;
+}
+.btn-outline-orange:hover {
+  background: rgba(249, 115, 22, 0.1);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+/* ─── Section Headers ────────────────────────────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--orange);
+}
+
+/* ─── Orange Divider ─────────────────────────────────── */
+.h-divider {
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), transparent);
+}
+
+/* ─── Gradient Backgrounds ───────────────────────────── */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 60% 40%,
+    rgba(249, 115, 22, 0.07) 0%,
+    transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%,
+    rgba(249, 115, 22, 0.04) 0%,
+    transparent 60%);
+}
+
+/* ─── Noise Overlay ──────────────────────────────────── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ─── Loading Screen ─────────────────────────────────── */
+.loading-bar {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  animation: loading-sweep 1.5s ease-in-out infinite;
+}
+@keyframes loading-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+/* ─── Cursor ─────────────────────────────────────────── */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease;
+}
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+.cursor-ring.hovered {
+  width: 50px;
+  height: 50px;
+  border-color: var(--orange);
+}
+
+/* ─── Skill Tag ──────────────────────────────────────── */
+.skill-tag {
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  color: rgba(241, 240, 238, 0.9);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.skill-tag:hover {
+  background: rgba(249, 115, 22, 0.18);
+  border-color: rgba(249, 115, 22, 0.5);
+  color: #fff;
+}
+
+/* ─── Project Card ───────────────────────────────────── */
+.project-card {
+  background: var(--dark-card);
+  border: 1px solid rgba(249, 115, 22, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(249, 115, 22, 0.1);
+}
+
+/* ─── Three.js Canvas ────────────────────────────────── */
+canvas {
+  display: block;
+}
+
+/* ─── Scan Line Effect ───────────────────────────────── */
+.scanline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* ─── Input Styling ──────────────────────────────────── */
+.input-dark {
+  background: rgba(15, 15, 22, 0.8);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+.input-dark::placeholder {
+  color: var(--text-muted);
+}
+.input-dark:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* ─── Animated Grid ──────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── Nav Link ───────────────────────────────────────── */
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--orange);
+  transition: width 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--orange);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
