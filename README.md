@@ -1,4 +1,4 @@
-# Alex Rivera — 3D Portfolio
+# Mark Lawrence Rodil — 3D Portfolio
 
 A visually immersive, full-screen 3D portfolio website built with **React + Vite**, **Three.js / React Three Fiber**, **Framer Motion**, and **Tailwind CSS**.
 
