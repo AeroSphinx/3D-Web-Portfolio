@@ -4,7 +4,7 @@ import { Code2, Cpu, Globe, Zap } from 'lucide-react'
 
 const STATS = [
   { value: '3+', label: 'Years Experience' },
-  { value: '40+', label: 'Projects Built' },
+  { value: '20+', label: 'Projects Built' },
   { value: '15+', label: 'Happy Clients' },
   { value: '99%', label: 'Coffee-Powered' },
 ]
@@ -96,9 +96,8 @@ export default function About() {
               animate={inView ? 'show' : 'hidden'}
             >
               When I'm not pushing code, you'll find me exploring 3D graphics,
-              contributing to open-source, or scouting for the perfect pour-over
-              coffee shop. I believe great software is built by curious people
-              who never stop learning.
+              contributing to open-source, or reading about the latest developments in AI. 
+              I believe great software is built by curious people who never stop learning.
             </motion.p>
 
             {/* Stats row */}

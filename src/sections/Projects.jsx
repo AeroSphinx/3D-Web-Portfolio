@@ -287,7 +287,7 @@ export default function Projects() {
           </div>
 
           <motion.a
-            href="https://github.com"
+            href="https://github.com/AeroSphinx"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline-orange text-xs px-5 py-2.5 rounded-xl flex items-center gap-2 self-start md:self-auto"

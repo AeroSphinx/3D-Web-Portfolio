@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import HeroScene from '../three/HeroScene'
 import { Github, Linkedin, ArrowDown } from 'lucide-react'
 
-const WORDS = ['Developer.', 'Engineer.', 'Creator.', 'Builder.']
+const WORDS = ['Developer.', 'AI Specialist.', 'Creator.', 'Builder.']
 
 function AnimatedRole() {
   const [index, setIndex] = React.useState(0)

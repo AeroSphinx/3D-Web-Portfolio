@@ -6,7 +6,7 @@ const SKILL_GROUPS = [
   {
     category: 'Frontend',
     color: '#f97316',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Three.js', 'Framer Motion', 'Vue.js'],
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'Three.js', 'Framer Motion', 'Vue.js'],
   },
   {
     category: 'Backend',
@@ -16,12 +16,12 @@ const SKILL_GROUPS = [
   {
     category: 'Database',
     color: '#ea580c',
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Supabase', 'Firebase'],
+    skills: ['PostgreSQL', 'MongoDB', 'Supabase', 'Firebase'],
   },
   {
     category: 'DevOps & Tools',
     color: '#f97316',
-    skills: ['Docker', 'AWS', 'Vercel', 'Git', 'CI/CD', 'Linux', 'Nginx'],
+    skills: ['Docker', 'AWS', 'Vercel', 'Git', 'CI/CD'],
   },
 ]
 
