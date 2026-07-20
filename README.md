@@ -26,7 +26,7 @@
 
 A visually immersive, interactive **3D portfolio website** built for showcasing full-stack development skills, projects, and personal brand. Features a real-time WebGL 3D scene, scroll-triggered animations, a custom cursor, and a functional contact form — all wrapped in a dark + orange aesthetic.
 
-> **Live Demo:** [your-live-url.vercel.app](https://your-live-url.vercel.app) ← *(update this after deploying)*
+> **Live Demo:** (https://3d-web-portfolio-nu.vercel.app)
 
 ---
 
